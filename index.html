@@ -4,7 +4,10 @@
   <title>Test</title>
   <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+  <script defer src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
   <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer src="translations.js"></script>
+  <script defer src="lang-switcher.js"></script>
   <script defer src="page-home.js"></script>
   <script defer src="main-footer.js"></script>
   <script defer src="app.js"></script>
@@ -13,23 +16,39 @@
 <body>
 
 <div id="app">
+    <h1>{{ $t('app_title') }}</h1>
+    <lang-switcher></lang-switcher>
     <router-view></router-view>
     <main-footer></main-footer>
 </div>
 
+<template id="lang-link">
+    <a href="#" @click="setLocale(locale)">{{ locale }}</a>
+</template>
+
+<template id="lang-switcher">
+    <aside>
+        <h2>{{ $t('lang_switcher.change_language') }}</h2>
+        <ul>
+            <li v-for="locale in Object.keys(messages)">
+                <lang-link v-bind:locale="messages[locale]"></lang-link>
+            </li>
+        </ul>
+    </aside>
+</template>
+
 <template id="page-home">
     <main>
-        <h1>// TYTUŁ DLA CZYTNIKÓW //</h1>
-        <h2>#3 Dobre zdrowie i jakość życia</h1>
-        <p>Spożycie alkoholu w Polsce wzrosło prawie 2 razy w latach 2000-2010.</p>
+        <h2>#3 {{ $t('goals.3') }}</h1>
+        <p>(hardcoded) Spożycie alkoholu w Polsce wzrosło prawie 2 razy w latach 2000-2010.</p>
     </main>
 </template>
 
 <template id="main-footer">
     <footer>
-        <a href="https://stat.gov.pl/">GUS</a>
-        <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">ONZ - Zrównoważony rozwój</a>
-        <a href="https://kampania17celow.pl/">Kampania „17 celów”</a>
+        <a href="https://stat.gov.pl/">{{ $t('main_footer.stat_poland') }}</a>
+        <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">{{ $t('main_footer.sdg') }}</a>
+        <a href="https://kampania17celow.pl/">{{ $t('main_footer.campaign_goals') }}</a>
     </footer>
 </template>
 
