@@ -1,3 +1,16 @@
+const ChartType = Object.freeze({
+    'BAR_CHART': 'BAR_CHART'
+});
+
+class Tip {
+    constructor(goal_id, text_content, chart_type, dataset) {
+        this.goal_id = goal_id;
+        this.text_content = text_content;
+        this.chart_type = chart_type; // From ChartType
+        this.dataset = dataset;
+    }
+}
+
 function getData(indicator, areaCode) {
     if (localStorage.getItem(indicator) === null) {
         return axios.get('https://unstats.un.org/SDGAPI/v1/sdg/Indicator/Data?indicator=' + indicator + '&areaCode=' + areaCode)
