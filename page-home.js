@@ -1,3 +1,3 @@
-const Homepage = {
-    template: '<div>foo</div>'
-};
+const PageHome = Vue.component('page-home', {
+    template: '#page-home'
+});

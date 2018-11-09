@@ -6,6 +6,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
   <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="page-home.js"></script>
+  <script defer src="main-footer.js"></script>
   <script defer src="app.js"></script>
   <script defer src="tipofday.js"></script>
 </head>
@@ -13,10 +14,24 @@
 
 <div id="app">
     <router-view></router-view>
-    <footer>Lorem ipsum stopka</footer>
-    <!--<button ="plebas">Halko</button> -->
-
+    <main-footer></main-footer>
 </div>
+
+<template id="page-home">
+    <main>
+        <h1>// TYTUŁ DLA CZYTNIKÓW //</h1>
+        <h2>#3 Dobre zdrowie i jakość życia</h1>
+        <p>Spożycie alkoholu w Polsce wzrosło prawie 2 razy w latach 2000-2010.</p>
+    </main>
+</template>
+
+<template id="main-footer">
+    <footer>
+        <a href="https://stat.gov.pl/">GUS</a>
+        <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">ONZ - Zrównoważony rozwój</a>
+        <a href="https://kampania17celow.pl/">Kampania „17 celów”</a>
+    </footer>
+</template>
 
 </body>
 </html>

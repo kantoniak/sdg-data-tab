@@ -1,6 +1,7 @@
-const routes = [
-    { path: '/', component: Homepage },
-];
+const routes = [{
+    path: '/',
+    component: PageHome
+}];
 
 const router = new VueRouter({
     routes
