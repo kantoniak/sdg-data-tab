@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Test</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;subset=latin-ext" />
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="css.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
   <script defer src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
@@ -16,7 +19,7 @@
 <body>
 
 <div id="app">
-    <h1>{{ $t('app_title') }}</h1>
+    <h1 class="screen-reader-text">{{ $t('app_title') }}</h1>
     <lang-switcher></lang-switcher>
     <router-view></router-view>
     <main-footer></main-footer>
@@ -27,8 +30,8 @@
 </template>
 
 <template id="lang-switcher">
-    <aside>
-        <h2>{{ $t('lang_switcher.change_language') }}</h2>
+    <aside id="change-language">
+        <h2 class="screen-reader-text">{{ $t('lang_switcher.change_language') }}</h2>
         <ul>
             <li v-for="locale in Object.keys(messages)">
                 <lang-link v-bind:locale="messages[locale]"></lang-link>
@@ -38,17 +41,23 @@
 </template>
 
 <template id="page-home">
-    <main>
-        <h2>#3 {{ $t('goals.3') }}</h1>
-        <p>(hardcoded) Spożycie alkoholu w Polsce wzrosło prawie 2 razy w latach 2000-2010.</p>
+    <main id="main-tip">
+        <div id="title-holder">
+            <h2>{{ $t('goals.3') }}</h1>
+        </div>
+        <div id="tip">
+            <p>Od 2000 roku liczba użytkowników internetu na 100 mieszkańców wzrosła 10 razy.</p>
+        </div>
     </main>
 </template>
 
 <template id="main-footer">
     <footer>
-        <a href="https://stat.gov.pl/">{{ $t('main_footer.stat_poland') }}</a>
-        <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">{{ $t('main_footer.sdg') }}</a>
-        <a href="https://kampania17celow.pl/">{{ $t('main_footer.campaign_goals') }}</a>
+        <ul>
+            <li><a href="https://stat.gov.pl/">{{ $t('main_footer.stat_poland') }}</a></li>
+            <li><a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">{{ $t('main_footer.sdg') }}</a></li>
+            <li><a href="https://kampania17celow.pl/">{{ $t('main_footer.campaign_goals') }}</a></li>
+        </ul>
     </footer>
 </template>
 

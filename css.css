@@ -1,0 +1,81 @@
+body { font: 1em/1.5 'Montserrat', Arial, sans-serif; font-weight: 600; }
+
+/* WCAG */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: #EFEFEF;
+    clip: auto !important;
+    clip-path: none;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 20px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+  }
+
+/* Text */
+
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; }
+
+h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
+
+/* Structure */
+
+#change-language { overflow: hidden; }
+#change-language li { float: left; text-transform: uppercase; }
+#change-language li:after { padding: 1em; content: '/'; }
+#change-language li:last-child:after { display: none; }
+
+#main-tip { text-align: center; }
+#title-holder h2 { text-transform: uppercase; border-bottom: 4px solid #279B48; }
+#tip { padding: 1em; text-align: center; }
+#tip p { font-size: 3em; }
+
+#app > footer { background: #279B48; }
+#app > footer li, #app > footer a { font-weight: 400; color: #EFEFEF; }
+
+@media only screen and (max-width: 799px) {
+    #change-language { display: block; padding: 1em; color: #EFEFEF; background: #252B36; }
+    #change-language ul { float: right; }
+    #change-language a { color: #EFEFEF; }
+
+    #title-holder h2 { font-size: 1.6em; padding: 0.6em 1em; }
+    #tip p { padding: 2em 1em; font-size: 2em; }
+
+    #app > footer { padding: 1em; }
+    #app > footer ul { margin-left: 1em; list-style-type: disc; }
+}
+
+@media only screen and (min-width: 800px) {
+    body, html, #app { height: 100%; }
+    #app { display: flex; flex-direction: column; align-items: stretch; }
+    #change-language { position: absolute; top: 2em; right: 2em; }
+    #app > main { flex: 1; }
+    
+    #title-holder { display: flex; align-items: center; justify-content: center; height: 16vh; min-height: 3.5em; }
+    #title-holder h2 { display: inline-block; font-size: 2.2em; }
+
+    #tip { display: flex; align-items: center; justify-content: center; height: 28vh; min-height: 9em; max-width: 70%; margin: 0 auto; }
+
+    #app > footer ul { display: flex; align-content: stretch; padding: 0 2em; line-height: 3; }
+    #app > footer li { flex: 1; text-align: center; }
+    #app > footer li:first-child { text-align: left; }
+    #app > footer li:last-child { text-align: right; }
+}
