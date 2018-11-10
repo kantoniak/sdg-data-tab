@@ -68,7 +68,7 @@
             </form>
         </div>
         <div id="title-holder">
-            <h2>{{ $t('goals.' + tip.goal_id) }}</h1>
+            <h2>{{ $t('goals.' + tip.goal_id) }}</h2>
         </div>
         <div id="tip">
             <p>{{ localized_text_content }}</p>
@@ -89,7 +89,7 @@
             <li>Łukasz Kędziorski</li>
             <li>Marta Mazurkiewicz</li>
         </ul>
-        <img src="img/hackathon_logo.png"/>
+        <img src="img/hackathon_logo.png" :alt="$t('hackathon_logo')"/>
     </div>
 </template>
 

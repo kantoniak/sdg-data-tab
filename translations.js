@@ -1,6 +1,7 @@
 const messages = {
     en: {
         app_title: 'SDG Data Tab',
+        hackathon_logo: 'Hackathon GUS Logo - SDG',
         lang_switcher: {
             change_language: 'Change language',
             change_language_to: 'Change language to'
@@ -43,6 +44,7 @@ const messages = {
     },
     pl: {
         app_title: 'Zakładka Zrównoważonych Danych',
+        hackathon_logo: 'Logo Hackathonu GUS - SDG',
         lang_switcher: {
             change_language: 'Zmień język',
             change_language_to: 'Zmień język na '
