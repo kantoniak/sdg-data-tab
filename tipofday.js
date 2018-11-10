@@ -56,7 +56,7 @@ function getYear(indicator, idx, areaCode) {
     mini_year = 3000;
     maxi_year = 0;
     item.data.data.forEach(function (element) {
-        res.push(parseFloat(element.value));
+        res.push(parseFloat(element.value).toFixed(2));
         year.push(element.timePeriodStart);
     });
     return year;
@@ -69,13 +69,13 @@ function getValues(indicator, idx, areaCode) {
     mini_year = 3000;
     maxi_year = 0;
     item.data.data.forEach(function (element) {
-        res.push(parseFloat(element.value));
+        res.push(parseFloat(element.value).toFixed(2));
         year.push(element.timePeriodStart);
     });
     return res;
 }
 
-function getYearEU(indicator, idx, areaCodes) {
+function getYearEU(indicator, idx, areaCodes, butlast=false) {
     res = [];
     year = [];
     dict = {};
@@ -95,13 +95,17 @@ function getYearEU(indicator, idx, areaCodes) {
         });
     });
     for (var key in dict) {
-        res.push(dict[key] / dict2[key]);
+        res.push((dict[key] / dict2[key]).toFixed(2));
         year.push(parseInt(key));
+    }
+    if (butlast) {
+        res.pop();
+        year.pop();
     }
     return year;
 }
 
-function getValuesEU(indicator, idx, areaCodes) {
+function getValuesEU(indicator, idx, areaCodes, butlast=false) {
     res = [];
     year = [];
     dict = {};
@@ -121,8 +125,12 @@ function getValuesEU(indicator, idx, areaCodes) {
         });
     });
     for (var key in dict) {
-        res.push(dict[key] / dict2[key]);
+        res.push((dict[key] / dict2[key]).toFixed(2));
         year.push(parseInt(key));
+    }
+    if (butlast) {
+        res.pop();
+        year.pop();
     }
     return res;
 }
@@ -137,14 +145,14 @@ description_pl = [
     'Liczba bankomatów zwiększyła się prawie 3 razy 2004-2016',
     'Liczba nastoletnich ciąż zmniejszyła się o ok 4% 2000-2015',
     'Liczba osób podłączonych do internetu zwiększyła się ponad 10 razy 2000-2016',
-    'Spożycie alkoholu na osobę wzrosło o ponad dwa litry 2000-2016',
+    'Spożycie alkoholu na osobę wzrosło o ponad 2 litry 2000-2016',
 ];
 description_en = [
     'Number of women in parliament has increased over 2 times 2000-2018',
     'Number of ATMs has increased almost 3 times 2004-2016',
     'Number of adolescent pregnancy has descreased about 4% 2000-2015',
     'Number of people online has increased over 10 times 2000-2016',
-    'Alcohol consumption per capita has increased over two liters 2000-2016',
+    'Alcohol consumption per capita has increased over 2 liters 2000-2016',
 ];
 chart_type = [ChartType.PIE_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART];
 
@@ -169,14 +177,25 @@ series.forEach(function (el, idx) {
 let it = 0;
 let samples = [];
 for (var i = 0; i < indicators.length; i++) {
-    samples.push(new Tip(parseInt(indicators[i].split('.')[0]),
-                        description_pl[i],
-                        description_en[i],
-                        chart_type[i],
-                        getValues(series[i], i, PolskaJestNajwazniejsza),
-                        getYear(series[i], i, PolskaJestNajwazniejsza),
-                        getValuesEU(series[i], i, EU),
-                        getYearEU(series[i], i, EU)));
+    if (i == 2) {
+        samples.push(new Tip(parseInt(indicators[i].split('.')[0]),
+                            description_pl[i],
+                            description_en[i],
+                            chart_type[i],
+                            getValues(series[i], i, PolskaJestNajwazniejsza),
+                            getYear(series[i], i, PolskaJestNajwazniejsza),
+                            getValuesEU(series[i], i, EU, true),
+                            getYearEU(series[i], i, EU, true)));
+    } else {
+        samples.push(new Tip(parseInt(indicators[i].split('.')[0]),
+                            description_pl[i],
+                            description_en[i],
+                            chart_type[i],
+                            getValues(series[i], i, PolskaJestNajwazniejsza),
+                            getYear(series[i], i, PolskaJestNajwazniejsza),
+                            getValuesEU(series[i], i, EU),
+                            getYearEU(series[i], i, EU)));
+    }
 }
 
 function getTip() {

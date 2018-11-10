@@ -44,8 +44,8 @@ const PageHome = Vue.component('page-home', {
                 return {};
             }
             return {
-                labels: this.tip.year_dataset,
-                series: [this.tip.dataset]
+                labels: this.tip.year_dataset_eu,
+                series: [this.tip.dataset, this.tip.dataset_eu]
             }
         }
     }

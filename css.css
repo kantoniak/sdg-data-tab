@@ -96,3 +96,11 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 .ct-series-a .ct-area {
     fill: var(--question-color) !important;
 }
+
+.ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut {
+    stroke: #CCC !important;
+}
+
+.ct-series-b .ct-area {
+    fill: #FFF !important;
+}
