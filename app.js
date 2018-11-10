@@ -35,7 +35,6 @@ const vm = new Vue({
         },
         logo_src: function () {
             return 'circle.svg';
-            //return 'logo_' + i18n.locale + '.svg';
         }
     },
     methods: {
