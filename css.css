@@ -65,15 +65,22 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 #twitter-share { background: url(img/twitter.svg) no-repeat; background-size: contain; }
 
 @media only screen and (max-width: 799px) {
-    #change-language { display: block; padding: 1em; color: #EFEFEF; background: #252B36; }
+    #app > header { display: block; padding: 1em; color: #EFEFEF; background: #252B36; }
+    #app > header #logo { float: left; }
     #change-language ul { float: right; }
     #change-language a { color: #EFEFEF; }
 
+    #search-bar input { font-size: 1.4em; width: 100%; border-radius: 0; }
+
     #title-holder h2 { font-size: 1.6em; padding: 0.6em 1em; }
-    #tip p { padding: 2em 1em; font-size: 2em; }
+    #tip p { padding: 1em 1em; font-size: 2em; }
+
+    #next-tip-button { margin-bottom: 1em; }
+    .v-chartist-container { height: 15em; }
 
     #app > footer { padding: 1em; }
     #app > footer ul { margin-left: 1em; list-style-type: disc; }
+    #app > footer #sharing { margin-bottom: 0.8em; }
 }
 
 @media only screen and (min-width: 800px) {
@@ -96,10 +103,11 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 
     #main-tip .v-chartist-container { height: calc(64vh - 5em - 5em + 1px); }
 
-    #app > footer ul { display: flex; align-content: stretch; padding: 0 2em; line-height: 3; }
-    #app > footer li { flex: 1; text-align: center; }
-    #app > footer li:first-child { text-align: left; }
-    #app > footer li:last-child { text-align: right; }
+    #app > footer ul { display: flex; justify-content: space-between; padding: 0 2em; line-height: 3; }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 999px) {
+    body { font-size: 0.85em; }
 }
 
 /* Chartist */
