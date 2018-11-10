@@ -18,6 +18,7 @@
   <script defer src="lang-switcher.js"></script>
   <script defer src="vue-chartist.js"></script>
   <script defer src="page-home.js"></script>
+  <script defer src="page-about.js"></script>
   <script defer src="main-footer.js"></script>
   <script defer src="tipofday.js"></script>
   <script defer src="app.js"></script>
@@ -72,6 +73,7 @@
             <li><a href="https://stat.gov.pl/">{{ $t('main_footer.stat_poland') }}</a></li>
             <li><a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">{{ $t('main_footer.sdg') }}</a></li>
             <li><a href="https://kampania17celow.pl/">{{ $t('main_footer.campaign_goals') }}</a></li>
+            <li><router-link to="/about">{{ $t('main_footer.about') }}</router-link></li>
         </ul>
     </footer>
 </template>

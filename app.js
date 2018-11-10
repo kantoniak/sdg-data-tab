@@ -1,6 +1,10 @@
 const routes = [{
     path: '/',
     component: PageHome
+},
+{
+    path: '/about',
+    component: PageAbout
 }];
 
 const router = new VueRouter({

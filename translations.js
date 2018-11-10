@@ -29,7 +29,8 @@ const messages = {
         main_footer: {
             stat_poland: 'Statistics Poland',
             sdg: 'UN - Sustainable Development',
-            campaign_goals: '„17 goals” campaign'
+            campaign_goals: '„17 goals” campaign',
+            about: 'About us'
         }
     },
     pl: {
@@ -62,7 +63,8 @@ const messages = {
         main_footer: {
             stat_poland: 'GUS',
             sdg: 'ONZ - Zrównoważony rozwój',
-            campaign_goals: 'Kampania „17 celów”'
+            campaign_goals: 'Kampania „17 celów”',
+            about: 'O nas'
         }
     }
 };
