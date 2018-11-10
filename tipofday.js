@@ -78,25 +78,30 @@ PolskaJestNajwazniejsza = '616';
 
 indicators = ['5.5.1', '8.10.1', '3.7.2', '17.8.1', '3.5.2'];
 description_pl = [
-    'Liczba kobiet w sejmie zwiększyła się ponad dwukrotnie w przeciągu lat 2000-2018',
-    'Liczba bankomatów zwiększyła się prawie trzykrotnie w przeciągu lat 2004-2016',
-    'Liczba nastoletnich ciąż zmniejszyła się o ok 4% od roku 2000 do roku 2015',
-    'Liczba osób podłączonych do internetu zwiększyła się przeszło dziesięciokrotnie pomiędzy rokiem 2000, a 2016',
-    'Spożycie alkoholu na osobę wzrosło o ponad dwa litry od roku 2000 do roku 2016',
+    'Liczba kobiet w sejmie zwiększyła się ponad 2 razy 2000-2018',
+    'Liczba bankomatów zwiększyła się prawie 3 razy 2004-2016',
+    'Liczba nastoletnich ciąż zmniejszyła się o ok 4% 2000-2015',
+    'Liczba osób podłączonych do internetu zwiększyła się ponad 10 razy 2000-2016',
+    'Spożycie alkoholu na osobę wzrosło o ponad dwa litry 2000-2016',
 ];
 description_en = [
-    'Number of women in parliament has increased over two times in 2000-2018',
-    'Number of ATMs has increased almost triple through 2004 to 2016',
-    'Number of adolescent pregnancy has descreased about 4% since 2000 to 2015',
-    'Number of people online has increased over 10 times through 2000 to 2016',
-    'Alcohol consumption has increased over two liters through 2000 to 2016',
+    'Number of women in parliament has increased over 2 times 2000-2018',
+    'Number of ATMs has increased almost 3 times 2004-2016',
+    'Number of adolescent pregnancy has descreased about 4% 2000-2015',
+    'Number of people online has increased over 10 times 2000-2016',
+    'Alcohol consumption per capita has increased over two liters 2000-2016',
 ];
 chart_type = [ChartType.PIE_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART];
 
 times = [true, true, false, true, false];
 query = ['&pageSize=19', '&pageSize=13', '', '', '']
 
-indicators.forEach(function (indicator, idx) { getData(indicator, idx, PolskaJestNajwazniejsza).then(function () {createTipOfTheDay(indicator, idx);}) });
+indicators.forEach(function (indicator, idx) {
+    getData(indicator, idx, PolskaJestNajwazniejsza)
+    .then(function () {
+        createTipOfTheDay(indicator, idx);
+    })
+});
 
 let it = 0;
 let samples = [];
