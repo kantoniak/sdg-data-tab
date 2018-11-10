@@ -55,7 +55,9 @@
 </template>
 
 <template id="vue-chartist">
-    <div class="v-chartist-container"></div>
+    <div id="chart-outer">
+        <div class="v-chartist-container"></div>
+    </div>
 </template>
 
 <template id="page-home">
@@ -70,6 +72,10 @@
         </div>
         <div id="tip">
             <p>{{ localized_text_content }}</p>
+            <ul>
+                <li>{{ $t('chart.poland') }}</li>
+                <li>{{ $t('chart.eu') }}</li>
+            </ul>
         </div>
         <a id="next-tip-button" class="input-style" @click.prevent="$emit('next-tip')">{{ $t('main.randomize_next') }}</a>
         <vue-chartist :data="data" :options="options" type="Line"></vue-chartist>

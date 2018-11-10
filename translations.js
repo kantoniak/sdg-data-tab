@@ -26,6 +26,10 @@ const messages = {
             16: 'Peace, justice and strong institutions',
             17: 'Partnerships for the goals',
         },
+        chart: {
+            poland: 'Poland',
+            eu: 'European Union',
+        },
         main_footer: {
             chrome_extension: 'Chrome Homepage Extension',
             facebook_share: 'Share to Facebook',
@@ -62,6 +66,10 @@ const messages = {
             15: 'Życie na lądzie',
             16: 'Pokój, sprawiedliwość i silne instytucje',
             17: 'Partnerstwo na rzecz celów',
+        },
+        chart: {
+            poland: 'Polska',
+            eu: 'Unia Europejska',
         },
         main_footer: {
             chrome_extension: 'Rozszerzenie do Google Chrome',
