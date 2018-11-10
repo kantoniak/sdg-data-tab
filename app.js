@@ -34,7 +34,8 @@ const vm = new Vue({
             return '--question-color: ' + tinycolor(this.color_rgb).toHexString();
         },
         logo_src: function () {
-            return 'logo_' + i18n.locale + '.svg';
+            return 'circle.svg';
+            //return 'logo_' + i18n.locale + '.svg';
         }
     },
     methods: {
