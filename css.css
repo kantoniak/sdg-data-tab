@@ -77,6 +77,10 @@ input[type="text"]::-webkit-input-placeholder {
 
 #next-tip-button { outline: 0; }
 
+#about { padding: 2em; }
+#about a { display: block; margin-bottom: 1em; color: var(--question-color); }
+#about ul { list-style-type: disc; margin: 2em 1em;}
+
 @media only screen and (max-width: 799px) {
     #app > header { display: block; padding: 1em; color: #EFEFEF; background: #252B36; }
     #app > header #logo { float: left; }

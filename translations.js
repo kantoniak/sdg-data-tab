@@ -2,6 +2,8 @@ const messages = {
     en: {
         app_title: 'SDG Data Tab',
         hackathon_logo: 'Hackathon GUS Logo - SDG',
+        about: 'The application is a project created during the hackathon organized by Statistics Poland. Members of the EmojiNotSupportedException team:',
+        back: '↞ Go back',
         lang_switcher: {
             change_language: 'Change language',
             change_language_to: 'Change language to'
@@ -46,6 +48,8 @@ const messages = {
     pl: {
         app_title: 'Zakładka Zrównoważonych Danych',
         hackathon_logo: 'Logo Hackathonu GUS - SDG',
+        about: 'Aplikacja jest projektem stworzonym podczas hackathonu organizowanego przez Główny Urząd Statystyczny. Pomysł zespołu EmojiNotSupportedException w składzie:',
+        back: '↞ Powrót',
         lang_switcher: {
             change_language: 'Zmień język',
             change_language_to: 'Zmień język na '

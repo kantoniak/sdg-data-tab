@@ -84,7 +84,9 @@
 </template>
 
 <template id="page-about">
-    <div>Aplikacja jest projektem stworzonym podczas hackathonu organizowanego przez Główny Urząd Statystyczny. Pomysł zespołu EmojiNotSupportedException w składzie:
+    <div id="about">
+        <router-link to="/">{{ $t('back') }}</router-link>
+        <p>{{ $t('about') }}</p>
         <ul>
             <li>Krzysztof Antoniak</li>
             <li>Łukasz Kędziorski</li>
