@@ -75,7 +75,7 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
     #title-holder h2 { font-size: 1.6em; padding: 0.6em 1em; }
     #tip p { padding: 1em 1em; font-size: 2em; }
 
-    #next-tip-button { margin-bottom: 1em; }
+    #next-tip-button { margin: 0 2em 2em; display: block; }
     .v-chartist-container { height: 15em; }
 
     #app > footer { padding: 1em; }
