@@ -61,7 +61,7 @@
     <main id="main-tip">
         <div id="search-bar">
             <form method="get" action="https://www.google.com/search">
-            <input type="text" name="q" size="61" value="">
+                <input type="text" name="q" value="" placeholder="Google" class="input-style" />
             </form>
         </div>
         <div id="title-holder">
@@ -71,7 +71,7 @@
             <p>{{ localized_text_content }}</p>
         </div>
         <a id="social-media-access"><img src="IMG/homepage.svg"><img src="IMG/facebook.svg"><img src="IMG/twitter.svg"></a>
-        <a id="next-tip-button" @click.prevent="$emit('next-tip')">{{ $t('main.randomize_next') }}</a>
+        <a id="next-tip-button" class="input-style" @click.prevent="$emit('next-tip')">{{ $t('main.randomize_next') }}</a>
         <vue-chartist :data="data" :options="options" type="Line"></vue-chartist>
     </main>
 </template>
