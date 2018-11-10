@@ -37,11 +37,13 @@ h2 { font-size: 2.5em; }
 h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 
 /* Structure */
+#logo { height: 3em; }
 
 #change-language { overflow: hidden; }
 #change-language li { float: left; text-transform: uppercase; }
 #change-language li:after { padding: 1em; content: '/'; }
 #change-language li:last-child:after { display: none; }
+#change-language a { line-height: 3em; }
 
 #main-tip { text-align: center; }
 #title-holder h2 { text-transform: uppercase; border-bottom: 4px solid #279B48; }
@@ -67,16 +69,17 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 @media only screen and (min-width: 800px) {
     body, html, #app { height: 100%; }
     #app { display: flex; flex-direction: column; align-items: stretch; }
-    #change-language { position: absolute; top: 2em; right: 2em; }
+    #app > header { padding: 1.5em 2em 0; }
+    #change-language { float: right; }
     #app > main { flex: 1; }
     
-    #title-holder { display: flex; align-items: center; justify-content: center; height: 16vh; min-height: 3.5em; }
+    #title-holder { display: flex; align-items: center; justify-content: center; height: 12vh; min-height: 3.5em; }
     #title-holder h2 { display: inline-block; font-size: 2.2em; }
 
-    #tip { display: flex; align-items: center; justify-content: center; height: 28vh; min-height: 9em; max-width: 70%; margin: 0 auto; }
+    #tip { display: flex; align-items: center; justify-content: center; height: 24vh; min-height: 9em; max-width: 70%; margin: 0 auto; }
     #next-tip-button { user-select: none; position: absolute; bottom: 3em; right: 2em; }
 
-    #main-tip .v-chartist-container { height: calc(56vh - 5em); }
+    #main-tip .v-chartist-container { height: calc(64vh - 5em - 5em + 1px); }
 
     #app > footer ul { display: flex; align-content: stretch; padding: 0 2em; line-height: 3; }
     #app > footer li { flex: 1; text-align: center; }
