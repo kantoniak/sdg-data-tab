@@ -10,9 +10,10 @@ const messages = {
             randomize_next: 'Shuffle'
         },
         goals: {
-            1: 'No poverty.',
-            2: 'Zero hunger.',
-            3: 'Good health and well-being.',
+            goal: 'Goal',
+            1: 'No poverty',
+            2: 'Zero hunger',
+            3: 'Good health and well-being',
             4: 'Quality education',
             5: 'Gender equality',
             6: 'Clean water and sanitation',
@@ -53,6 +54,7 @@ const messages = {
             randomize_next: 'Losuj'
         },
         goals: {
+            goal: 'Cel',
             1: 'Koniec z ubóstwem',
             2: 'Zero głodu',
             3: 'Dobre zdrowie i jakość życia',

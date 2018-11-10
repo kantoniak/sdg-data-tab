@@ -68,7 +68,8 @@
             </form>
         </div>
         <div id="title-holder">
-            <h2>{{ $t('goals.' + tip.goal_id) }}</h2>
+            <img id="goal" :src="icon_src" :alt="localized_goal_num" />
+            <h2>{{ $t('goals.goal') }} #{{ tip.goal_id }}: {{ $t('goals.' + tip.goal_id) }}</h1>
         </div>
         <div id="tip">
             <p>{{ localized_text_content }}</p>

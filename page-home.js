@@ -32,12 +32,18 @@ const PageHome = Vue.component('page-home', {
     },
     template: '#page-home',
     computed: {
+        localized_goal_num: function() {
+            return '#' + this.tip.goal_id;
+        },
         localized_text_content: function () {
             if (i18n.locale === 'pl') {
                 return this.tip.text_content;
             } else {
                 return this.tip.text_content_en;
             }
+        },
+        icon_src: function () {
+            return 'goals/' + this.tip.goal_id + '.svg';
         },
         data: function () {
             if (this.tip == null) {
