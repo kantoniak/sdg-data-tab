@@ -70,7 +70,6 @@
         <div id="tip">
             <p>{{ localized_text_content }}</p>
         </div>
-        <a id="social-media-access"><img src="IMG/homepage.svg"><img src="IMG/facebook.svg"><img src="IMG/twitter.svg"></a>
         <a id="next-tip-button" class="input-style" @click.prevent="$emit('next-tip')">{{ $t('main.randomize_next') }}</a>
         <vue-chartist :data="data" :options="options" type="Line"></vue-chartist>
     </main>
@@ -83,6 +82,11 @@
 <template id="main-footer">
     <footer>
         <ul>
+            <li id="sharing">
+                <a href="#" id="chrome-extension" :title="$t('main_footer.chrome_extension')">{{ $t('main_footer.chrome_extension') }}</a>
+                <a href="#" id="facebook-share" :title="$t('main_footer.facebook_share')">{{ $t('main_footer.facebook_share') }}</a>
+                <a href="#" id="twitter-share" :title="$t('main_footer.twitter_share')">{{ $t('main_footer.twitter_share') }}</a>
+            </li>
             <li><a href="https://stat.gov.pl/">{{ $t('main_footer.stat_poland') }}</a></li>
             <li><a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">{{ $t('main_footer.sdg') }}</a></li>
             <li><a href="https://kampania17celow.pl/">{{ $t('main_footer.campaign_goals') }}</a></li>

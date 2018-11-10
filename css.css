@@ -31,8 +31,8 @@ body { font: 1em/1.5 'Montserrat', Arial, sans-serif; font-weight: 600; }
 
 /* Text */
 
-h1 { font-size: 3em; }
-h2 { font-size: 2.5em; }
+h1 { font-size: 2em; }
+h2 { font-size: 2em; }
 
 h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 
@@ -51,12 +51,18 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 #main-tip { text-align: center; }
 #title-holder h2 { text-transform: uppercase; border-bottom: 4px solid var(--question-color); }
 #tip { padding: 1em; text-align: center; }
-#tip p { font-size: 3em; }
+#tip p { font-size: 2em; }
 #next-tip-button { padding: 0.5em 1em 0.5em 2.5em; font-size: 2em; text-transform: uppercase; background: #FFF 0.5em center / auto 60% url(circle.svg) no-repeat; }
 #social-media-access { padding: 0.5em 1em 0.5em 2.5em; font-size: 1em; text-transform: uppercase;}
 
 #app > footer { background: var(--question-color); }
 #app > footer li, #app > footer a { font-weight: 400; color: #EFEFEF; }
+
+#app footer #sharing { display: flex; align-items: center; }
+#app footer #sharing a { display: inline-block; background: ; height: 1.8em; width: 1.8em; overflow: hidden; margin-right: 1em; text-indent: -1000em; }
+#chrome-extension { background: url(img/homepage.svg) no-repeat; background-size: contain; }
+#facebook-share { background: url(img/facebook.svg) no-repeat; background-size: contain; }
+#twitter-share { background: url(img/twitter.svg) no-repeat; background-size: contain; }
 
 @media only screen and (max-width: 799px) {
     #change-language { display: block; padding: 1em; color: #EFEFEF; background: #252B36; }
@@ -77,13 +83,14 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
     #change-language { float: right; }
     #app > main { flex: 1; }
     
+    #search-bar { display: flex; align-items: center; justify-content: center; height: 8vh; min-height: 2em; }
     #search-bar input { min-width: 30em; font-size: 1.5em; }
     #search-bar input:focus { background-color: #FAFAFA; outline: 0; }
 
-    #title-holder { display: flex; align-items: center; justify-content: center; height: 12vh; min-height: 3.5em; }
-    #title-holder h2 { display: inline-block; font-size: 2.2em; }
+    #title-holder { display: flex; align-items: center; justify-content: center; height: 8vh; min-height: 2em; margin-top: 4vh; }
+    #title-holder h2 { display: inline-block; font-size: 1.8em; }
 
-    #tip { display: flex; align-items: center; justify-content: center; height: 24vh; min-height: 9em; max-width: 70%; margin: 0 auto; }
+    #tip { display: flex; align-items: flex-start; justify-content: center; height: 16vh; min-height: 9em; max-width: 70%; margin: 0 auto; }
     #next-tip-button { user-select: none; position: absolute; bottom: 3em; right: 2em; }
     #social-media-access { user-select: none; position: absolute; bottom: 3em; left: 2em; }
 

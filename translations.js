@@ -5,7 +5,7 @@ const messages = {
             change_language: 'Change language'
         },
         main: {
-            randomize_next: 'Next tip'
+            randomize_next: 'Shuffle'
         },
         goals: {
             1: 'No poverty.',
@@ -27,6 +27,9 @@ const messages = {
             17: 'Partnerships for the goals',
         },
         main_footer: {
+            chrome_extension: 'Chrome Homepage Extension',
+            facebook_share: 'Share to Facebook',
+            twitter_share: 'Share to Twitter',
             stat_poland: 'Statistics Poland',
             sdg: 'UN - Sustainable Development',
             campaign_goals: '„17 goals” campaign',
@@ -39,7 +42,7 @@ const messages = {
             change_language: 'Zmień język'
         },
         main: {
-            randomize_next: 'Losuj nową'
+            randomize_next: 'Losuj'
         },
         goals: {
             1: 'Koniec z ubóstwem',
@@ -61,6 +64,9 @@ const messages = {
             17: 'Partnerstwo na rzecz celów',
         },
         main_footer: {
+            chrome_extension: 'Rozszerzenie do Google Chrome',
+            facebook_share: 'Wysharuj na Facebooka',
+            twitter_share: 'Wysharuj na Twittera',
             stat_poland: 'GUS',
             sdg: 'ONZ - Zrównoważony rozwój',
             campaign_goals: 'Kampania „17 celów”',
