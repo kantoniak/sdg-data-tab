@@ -70,6 +70,7 @@
         <div id="tip">
             <p>{{ localized_text_content }}</p>
         </div>
+        <a id="social-media-access"><img src="IMG/homepage.svg"><img src="IMG/facebook.svg"><img src="IMG/twitter.svg"></a>
         <a id="next-tip-button" @click.prevent="$emit('next-tip')">{{ $t('main.randomize_next') }}</a>
         <vue-chartist :data="data" :options="options" type="Line"></vue-chartist>
     </main>

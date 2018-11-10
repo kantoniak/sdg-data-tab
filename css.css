@@ -50,6 +50,7 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 #tip { padding: 1em; text-align: center; }
 #tip p { font-size: 3em; }
 #next-tip-button { padding: 0.5em 1em 0.5em 2.5em; font-size: 2em; text-transform: uppercase; background: #FFF 0.5em center / auto 60% url(circle.svg) no-repeat; box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.2); border-radius: 5em; }
+#social-media-access { padding: 0.5em 1em 0.5em 2.5em; font-size: 1em; text-transform: uppercase;}
 
 #app > footer { background: var(--question-color); }
 #app > footer li, #app > footer a { font-weight: 400; color: #EFEFEF; }
@@ -78,6 +79,7 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 
     #tip { display: flex; align-items: center; justify-content: center; height: 24vh; min-height: 9em; max-width: 70%; margin: 0 auto; }
     #next-tip-button { user-select: none; position: absolute; bottom: 3em; right: 2em; }
+    #social-media-access { user-select: none; position: absolute; bottom: 3em; left: 2em; }
 
     #main-tip .v-chartist-container { height: calc(64vh - 5em - 5em + 1px); }
 
