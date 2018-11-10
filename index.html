@@ -56,6 +56,11 @@
 
 <template id="page-home">
     <main id="main-tip">
+        <div id="search-bar">
+            <form method="get" action="https://www.google.com/search">
+            <input type="text" name="q" size="61" value="">
+            </form>
+        </div>
         <div id="title-holder">
             <h2>{{ $t('goals.' + tip.goal_id) }}</h1>
         </div>
