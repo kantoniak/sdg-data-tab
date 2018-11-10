@@ -114,6 +114,7 @@ input[type="text"]::-webkit-input-placeholder {
 
     #tip { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 16vh; min-height: 9em; max-width: 70%; margin: 0 auto; }
     #next-tip-button { user-select: none; position: absolute; bottom: 3em; right: 2em; }
+    #next-tip-button:focus { background-color: #F6F6F6; }
     #social-media-access { user-select: none; position: absolute; bottom: 3em; left: 2em; }
 
     #main-tip #chart-outer { height: calc(64vh - 5em - 5em + 1px); }
