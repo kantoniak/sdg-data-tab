@@ -36,7 +36,7 @@
         <lang-switcher></lang-switcher>
     </header>
     <router-view :tip="tip" v-on:next-tip="nextTip"></router-view>
-    <main-footer></main-footer>
+    <main-footer :tip="tip"></main-footer>
 </div>
 
 <template id="lang-link">
@@ -77,7 +77,7 @@
                 <li>{{ $t('chart.eu') }}</li>
             </ul>
         </div>
-        <a id="next-tip-button" class="input-style" @click.prevent="$emit('next-tip')" :title="$t('main.randomize_next')">{{ $t('main.randomize_next') }}</a>
+        <a tabindex="0" id="next-tip-button" class="input-style" @keyup.enter.space="$emit('next-tip')" @click.prevent="$emit('next-tip')" :title="$t('main.randomize_next')">{{ $t('main.randomize_next') }}</a>
         <vue-chartist :data="data" :options="options" type="Line"></vue-chartist>
     </main>
 </template>
@@ -98,8 +98,8 @@
         <ul>
             <li id="sharing">
                 <a href="#" id="chrome-extension" :title="$t('main_footer.chrome_extension')">{{ $t('main_footer.chrome_extension') }}</a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=kodujsdg.stat.gov.pl" id="facebook-share" :title="$t('main_footer.facebook_share')">{{ $t('main_footer.facebook_share') }}</a>
-                <a href="#" id="twitter-share" :title="$t('main_footer.twitter_share')">{{ $t('main_footer.twitter_share') }}</a>
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=kodujsdg.stat.gov.pl" id="facebook-share" :title="$t('main_footer.facebook_share')">{{ $t('main_footer.facebook_share') }}</a>
+                <a target="_blank" :href="twitter_url" id="twitter-share" :title="$t('main_footer.twitter_share')">{{ $t('main_footer.twitter_share') }}</a>
             </li>
             <li><a href="https://stat.gov.pl/">{{ $t('main_footer.stat_poland') }}</a></li>
             <li><a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">{{ $t('main_footer.sdg') }}</a></li>
