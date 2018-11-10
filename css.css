@@ -76,8 +76,20 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
     #tip { display: flex; align-items: center; justify-content: center; height: 28vh; min-height: 9em; max-width: 70%; margin: 0 auto; }
     #next-tip-button { user-select: none; position: absolute; bottom: 3em; right: 2em; }
 
+    #main-tip .v-chartist-container { height: calc(56vh - 5em); }
+
     #app > footer ul { display: flex; align-content: stretch; padding: 0 2em; line-height: 3; }
     #app > footer li { flex: 1; text-align: center; }
     #app > footer li:first-child { text-align: left; }
     #app > footer li:last-child { text-align: right; }
+}
+
+/* Chartist */
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+    stroke: #0CC162 !important;
+    
+}
+
+.ct-series-a .ct-area {
+    fill: #0CC162 !important;
 }

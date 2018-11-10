@@ -3,15 +3,20 @@
 <head>
   <title>Test</title>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;subset=latin-ext" />
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="css.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;subset=latin-ext" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  <script defer src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/v-chartist/dist/vue-chartist.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.min.js"></script>
   <script defer src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
   <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="translations.js"></script>
   <script defer src="lang-switcher.js"></script>
+  <script defer src="vue-chartist.js"></script>
   <script defer src="page-home.js"></script>
   <script defer src="main-footer.js"></script>
   <script defer src="tipofday.js"></script>
@@ -41,6 +46,10 @@
     </aside>
 </template>
 
+<template id="vue-chartist">
+    <div class="v-chartist-container"></div>
+</template>
+
 <template id="page-home">
     <main id="main-tip">
         <div id="title-holder">
@@ -50,6 +59,7 @@
             <p>{{ localized_text_content }}</p>
         </div>
         <a id="next-tip-button" @click.prevent="$emit('next-tip')">{{ $t('main.randomize_next') }}</a>
+        <vue-chartist :data="data" :options="options" type="Line"></vue-chartist>
     </main>
 </template>
 
