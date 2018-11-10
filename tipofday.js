@@ -3,7 +3,7 @@ const ChartType = Object.freeze({
 });
 
 class Tip {
-    constructor(goal_id, text_content, text_context_en, chart_type, dataset, year_dataset) {
+    constructor(goal_id, text_content, text_content_en, chart_type, dataset, year_dataset) {
         this.goal_id = goal_id;
         this.text_content = text_content;
         this.text_content_en = text_content_en;
@@ -58,10 +58,10 @@ PolskaJestNajwazniejsza = '616';
 indicators.forEach(function (indicator) { getData(indicator, PolskaJestNajwazniejsza); });
 indicators.forEach(function (indicator, idx) { createTipOfTheDay(indicator, idx); });
 
-function getTip() {
-
-    return new Tip(1, 'Urus', );
-}
+//function getTip() {
+//
+//    return new Tip(1, 'Urus');
+//}
 
 // Chujowy format, bo nie ma lat do tych danych + języka ENG
 let pjn1 = new Tip(3, 'Alkohol urus o ponad dwa litry od roku 2000 do roku 2016', 'Alcohol urus over two liters through 2000 to 2016', ChartType.BAR_CHART, [9.59, 11.06, 11.37, 11.64, 11.63], [2000, 2005, 2010, 2015, 2016]);
