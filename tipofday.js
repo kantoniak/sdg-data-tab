@@ -4,28 +4,30 @@ const ChartType = Object.freeze({
 });
 
 class Tip {
-    constructor(goal_id, text_content, text_content_en, chart_type, dataset, year_dataset) {
+    constructor(goal_id, text_content, text_content_en, chart_type, dataset, year_dataset, dataset_eu, year_dataset_eu) {
         this.goal_id = goal_id;
         this.text_content = text_content;
         this.text_content_en = text_content_en;
         this.chart_type = chart_type; // From ChartType
         this.dataset = dataset;
         this.year_dataset = year_dataset;
+        this.dataset_eu = dataset_eu;
+        this.year_dataset_eu = year_dataset_eu;
     }
 }
 
 function getData(indicator, idx, areaCode) {
-    if (localStorage.getItem(indicator) === null) {
-        return axios.get('https://unstats.un.org/SDGAPI/v1/sdg/Indicator/Data?indicator=' + indicator + '&areaCode=' + areaCode + query[idx])
+    if (localStorage.getItem(indicator + "_" + areaCode) === null) {
+        return axios.get('https://unstats.un.org/SDGAPI/v1/sdg/Series/Data?seriesCode=' + indicator + '&areaCode=' + areaCode)
         .then(function (response) {
-            localStorage.setItem(indicator, JSON.stringify(response));
+            localStorage.setItem(indicator + "_" +  areaCode, JSON.stringify(response));
         });
     }
     return new Promise(function(){});
 }
 
 function createTipOfTheDay(indicator, idx) {
-    item = JSON.parse(localStorage.getItem(indicator));
+    item = JSON.parse(localStorage.getItem(indicator + "_" + PolskaJestNajwazniejsza));
     mini_year = 3000;
     maxi_year = 0;
     item.data.data.forEach(function (element) {
@@ -43,39 +45,92 @@ function createTipOfTheDay(indicator, idx) {
     if (times[idx]) {
         numericalData[0] = (parseFloat(message2.value) / parseFloat(message.value));
     }
-    //console.log(description_pl[idx]);
 }
 
 
 // TODO merge getYear and getValues
-function getYear(indicator, idx) {
+function getYear(indicator, idx, areaCode) {
     res = [];
     year = [];
-    item = JSON.parse(localStorage.getItem(indicator));
+    item = JSON.parse(localStorage.getItem(indicator + "_" + areaCode));
     mini_year = 3000;
     maxi_year = 0;
     item.data.data.forEach(function (element) {
-        res.push(element.value);
+        res.push(parseFloat(element.value));
         year.push(element.timePeriodStart);
     });
     return year;
 }
 
-function getValues(indicator, idx) {
+function getValues(indicator, idx, areaCode) {
     res = [];
     year = [];
-    item = JSON.parse(localStorage.getItem(indicator));
+    item = JSON.parse(localStorage.getItem(indicator + "_" + areaCode));
     mini_year = 3000;
     maxi_year = 0;
     item.data.data.forEach(function (element) {
-        res.push(element.value);
+        res.push(parseFloat(element.value));
         year.push(element.timePeriodStart);
     });
     return res;
 }
 
-PolskaJestNajwazniejsza = '616';
+function getYearEU(indicator, idx, areaCodes) {
+    res = [];
+    year = [];
+    dict = {};
+    dict2 = {};
+    areaCodes.forEach(function (areaCode) {
+        item = JSON.parse(localStorage.getItem(indicator + "_" + areaCode));
+        mini_year = 3000;
+        maxi_year = 0;
+        item.data.data.forEach(function (element) {
+            if (dict[parseInt(element.timePeriodStart)] == undefined) {
+                dict[parseInt(element.timePeriodStart)] = parseFloat(element.value);
+                dict2[parseInt(element.timePeriodStart)] = 1;
+            } else {
+                dict[parseInt(element.timePeriodStart)] += parseFloat(element.value);
+                dict2[parseInt(element.timePeriodStart)] += 1;
+            }
+        });
+    });
+    for (var key in dict) {
+        res.push(dict[key] / dict2[key]);
+        year.push(parseInt(key));
+    }
+    return year;
+}
 
+function getValuesEU(indicator, idx, areaCodes) {
+    res = [];
+    year = [];
+    dict = {};
+    dict2 = {};
+    areaCodes.forEach(function (areaCode) {
+        item = JSON.parse(localStorage.getItem(indicator + "_" + areaCode));
+        mini_year = 3000;
+        maxi_year = 0;
+        item.data.data.forEach(function (element) {
+            if (dict[parseInt(element.timePeriodStart)] == undefined) {
+                dict[parseInt(element.timePeriodStart)] = parseFloat(element.value);
+                dict2[parseInt(element.timePeriodStart)] = 1;
+            } else {
+                dict[parseInt(element.timePeriodStart)] += parseFloat(element.value);
+                dict2[parseInt(element.timePeriodStart)] += 1;
+            }
+        });
+    });
+    for (var key in dict) {
+        res.push(dict[key] / dict2[key]);
+        year.push(parseInt(key));
+    }
+    return res;
+}
+
+PolskaJestNajwazniejsza = '616';
+EU = ['40', '56', '100', '191', '196', '203', '208', '233', '246', '250', '300', '724', '528', '372', '440', '442', '428', '470', '276', '616', '620', '642', '703', '705', '752', '348', '380', '826'];
+
+series = ['SG_GEN_PARLN', 'FB_ATM_TOTL', 'SP_DYN_ADKL', 'IT_USE_ii99', 'SH_ALC_CONSPT'];
 indicators = ['5.5.1', '8.10.1', '3.7.2', '17.8.1', '3.5.2'];
 description_pl = [
     'Liczba kobiet w sejmie zwiększyła się ponad 2 razy 2000-2018',
@@ -94,13 +149,21 @@ description_en = [
 chart_type = [ChartType.PIE_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART];
 
 times = [true, true, false, true, false];
-query = ['&pageSize=19', '&pageSize=13', '', '', '']
 
-indicators.forEach(function (indicator, idx) {
-    getData(indicator, idx, PolskaJestNajwazniejsza)
+series.forEach(function (el, idx) {
+    getData(el, idx, PolskaJestNajwazniejsza)
     .then(function () {
-        createTipOfTheDay(indicator, idx);
+        createTipOfTheDay(el, idx);
     })
+});
+
+series.forEach(function (el, idx) {
+    EU.forEach(function (country, idx) {
+        getData(el, idx, country)
+        .then(function () {
+            createTipOfTheDay(el, idx);
+        })
+    });
 });
 
 let it = 0;
@@ -110,8 +173,10 @@ for (var i = 0; i < indicators.length; i++) {
                         description_pl[i],
                         description_en[i],
                         chart_type[i],
-                        getValues(indicators[i], i),
-                        getYear(indicators[i], i)));
+                        getValues(series[i], i, PolskaJestNajwazniejsza),
+                        getYear(series[i], i, PolskaJestNajwazniejsza),
+                        getValuesEU(series[i], i, EU),
+                        getYearEU(series[i], i, EU)));
 }
 
 function getTip() {
