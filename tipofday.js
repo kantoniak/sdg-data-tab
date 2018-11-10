@@ -7,7 +7,7 @@ class Tip {
     constructor(goal_id, text_content, text_content_en, chart_type, dataset, year_dataset, dataset_eu, year_dataset_eu) {
         this.goal_id = goal_id;
         this.text_content = text_content + " w latach " + year_dataset[0] + "-" + year_dataset[year_dataset.length - 1];
-        this.text_content_en = text_content_en + " " + year_dataset[0] + "-" + year_dataset[year_dataset.length - 1];;
+        this.text_content_en = text_content_en + " in " + year_dataset[0] + "-" + year_dataset[year_dataset.length - 1];;
         this.chart_type = chart_type; // From ChartType
         this.dataset = dataset;
         this.year_dataset = year_dataset;
@@ -141,18 +141,18 @@ EU = ['40', '56', '100', '191', '196', '203', '208', '233', '246', '250', '300',
 series = ['SG_GEN_PARLN', 'FB_ATM_TOTL', 'SP_DYN_ADKL', 'IT_USE_ii99', 'SH_ALC_CONSPT'];
 indicators = ['5.5.1', '8.10.1', '3.7.2', '17.8.1', '3.5.2'];
 description_pl = [
-    'Liczba kobiet w sejmie zwiększyła się ponad 2 razy',
-    'Liczba bankomatów zwiększyła się prawie 3 razy',
-    'Liczba nastoletnich ciąż zmniejszyła się o ok 4%',
-    'Liczba osób podłączonych do internetu zwiększyła się ponad 10 razy',
-    'Spożycie alkoholu na osobę wzrosło o ponad 2 litry',
+    'Liczba kobiet w Sejmie w Polsce zwiększyła się ponad 2 razy',
+    'Liczba bankomatów w Polsce na 100,000 osób zwiększyła się prawie 3 razy',
+    'Liczba nastoletnich ciąż w Polsce zmniejszyła się o ok 4%',
+    'Liczba osób podłączonych do internetu w Polsce zwiększyła się ponad 10 razy',
+    'Spożycie alkoholu na osobę w Polsce wzrosło o ponad 2 litry',
 ];
 description_en = [
-    'Number of women in parliament has increased over 2 times',
-    'Number of ATMs has increased almost 3 times',
-    'Number of adolescent pregnancy has descreased about 4%',
-    'Number of people online has increased over 10 times',
-    'Alcohol consumption per capita has increased over 2 liters',
+    'Number of women in parliament in Poland has increased over 2 times',
+    'Number of ATMs in Poland per 100,000 adults has increased almost 3 times',
+    'Number of adolescent pregnancy in Poland has descreased about 4%',
+    'Number of people online in Poland has increased over 10 times',
+    'Alcohol consumption per capita in Poland has increased over 2 liters',
 ];
 chart_type = [ChartType.PIE_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART];
 
