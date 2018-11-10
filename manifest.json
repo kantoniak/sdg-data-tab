@@ -3,7 +3,7 @@
     "version": "1.0",
     "description": "Awesome Extension!",
     "manifest_version": 2,
-    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/npm/vue/dist/vue.js https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js https://unpkg.com/vue-i18n/dist/vue-i18n.js https://unpkg.com/axios/dist/axios.min.js https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js https://cdn.jsdelivr.net/npm/v-chartist/dist/vue-chartist.min.js https://cdn.jsdelivr.net/npm/chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.min.js  'unsafe-eval'; object-src 'self'",
+    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/npm/vue/dist/vue.js https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js https://unpkg.com/vue-i18n/dist/vue-i18n.js https://unpkg.com/axios/dist/axios.min.js https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js https://cdn.jsdelivr.net/npm/v-chartist/dist/vue-chartist.min.js https://cdn.jsdelivr.net/npm/chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.min.js https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.js 'unsafe-eval'; object-src 'self'",
     "chrome_url_overrides" : {
         "newtab": "index.html"
     }
