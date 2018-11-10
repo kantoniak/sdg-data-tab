@@ -28,7 +28,7 @@
 <div id="app">
     <header>
         <h1 class="screen-reader-text">{{ $t('app_title') }}</h1>
-        <img id="logo" src="logo_pl.svg" height="40px" />
+        <img id="logo" :src="logo_src" height="40px" alt="{{ $t('app_title') }}" />
         <lang-switcher></lang-switcher>
     </header>
     <router-view :tip="tip" v-on:next-tip="nextTip"></router-view>

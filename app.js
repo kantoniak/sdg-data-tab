@@ -24,6 +24,11 @@ const vm = new Vue({
     router,
     i18n,
     data,
+    computed: {
+        logo_src: function () {
+            return 'logo_' + i18n.locale + '.svg';
+        }
+    },
     methods: {
         nextTip: function() {
             this.tip = getTip();
