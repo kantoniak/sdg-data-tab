@@ -1,5 +1,6 @@
 const ChartType = Object.freeze({
-    'BAR_CHART': 'BAR_CHART'
+    'BAR_CHART': 'BAR_CHART',
+    'PIE_CHART': 'PIE_CHART',
 });
 
 class Tip {
@@ -41,7 +42,7 @@ function createTipOfTheDay(indicator, idx) {
     if (times[idx]) {
         numericalData[0] = (parseFloat(message2.value) / parseFloat(message.value));
     }
-    console.log(description_pl[idx]);
+    //console.log(description_pl[idx]);
 }
 
 
@@ -73,35 +74,33 @@ function getValues(indicator, idx) {
 }
 
 PolskaJestNajwazniejsza = '616';
-indicators = ['3.5.2', '5.5.1', '8.10.1', '3.7.2', '17.8.1'];
-times = [false, true, true, false, true];
 
+indicators = ['5.5.1', '8.10.1', '3.7.2', '17.8.1', '3.5.2'];
 description_pl = [
-    'Alkohol urus o ponad dwa litry od roku 2000 do roku 2016',
-    'Liczba kobiet w sejmie zwiekszyla sie ponad dwukrotnie w przeciagu lat 2000-2018',
-    'Liczba bankomatow zwiekszyla sie prawie trzykrotnie w przeciagu lat 2004-2016',
-    'Liczba nastoletnich ciaz zmniejszyla sie o ok 4% od roku 2000 do roku 2015',
-    'Liczba osob podlaczonych do internetu zwiekszyla sie przeszło dziesieciokrotnie pomiedzy rokiem 2000, a 2016',
+    'Liczba kobiet w sejmie zwiększyła się ponad dwukrotnie w przeciągu lat 2000-2018',
+    'Liczba bankomatów zwiększyła się prawie trzykrotnie w przeciągu lat 2004-2016',
+    'Liczba nastoletnich ciąż zmniejszyła się o ok 4% od roku 2000 do roku 2015',
+    'Liczba osób podłączonych do internetu zwiększyła się przeszło dziesięciokrotnie pomiędzy rokiem 2000, a 2016',
+    'Spożycie alkoholu na osobę wzrosło o ponad dwa litry od roku 2000 do roku 2016',
 ];
-
 description_en = [
-    'Alcohol urus over two liters through 2000 to 2016',
-    'Number of women in parliament has increased over two time in 2000-2018',
+    'Number of women in parliament has increased over two times in 2000-2018',
     'Number of ATMs has increased almost triple through 2004 to 2016',
     'Number of adolescent pregnancy has descreased about 4% since 2000 to 2015',
     'Number of people online has increased over 10 times through 2000 to 2016',
+    'Alcohol consumption has increased over two liters through 2000 to 2016',
 ];
+chart_type = [ChartType.PIE_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART];
 
-query = ['', '&pageSize=19', '&pageSize=13', '', '']
-
-chart_type = [ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART];
+times = [true, true, false, true, false];
+query = ['&pageSize=19', '&pageSize=13', '', '', '']
 
 indicators.forEach(function (indicator, idx) { getData(indicator, idx, PolskaJestNajwazniejsza); });
 indicators.forEach(function (indicator, idx) { createTipOfTheDay(indicator, idx); });
 
 let it = 0;
 let samples = [];
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < indicators.length; i++) {
     samples.push(new Tip(parseInt(indicators[i].split('.')[0]),
                         description_pl[i],
                         description_en[i],
