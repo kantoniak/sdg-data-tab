@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Test</title>
+  <meta charset="utf-8" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;subset=latin-ext" />
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="css.css" />
@@ -13,15 +14,15 @@
   <script defer src="lang-switcher.js"></script>
   <script defer src="page-home.js"></script>
   <script defer src="main-footer.js"></script>
-  <script defer src="app.js"></script>
   <script defer src="tipofday.js"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
 
 <div id="app">
-    <h1 class="screen-reader-text">{{ $t('app_title') }}</h1>
+    <h1 class="scren-reader-text" @click.prevent="nextTip">{{ $t('app_title') }}</h1>
     <lang-switcher></lang-switcher>
-    <router-view></router-view>
+    <router-view :tip="tip"></router-view>
     <main-footer></main-footer>
 </div>
 
@@ -43,10 +44,10 @@
 <template id="page-home">
     <main id="main-tip">
         <div id="title-holder">
-            <h2>{{ $t('goals.3') }}</h1>
+            <h2>{{ $t('goals.' + tip.goal_id) }}</h1>
         </div>
         <div id="tip">
-            <p>Od 2000 roku liczba użytkowników internetu na 100 mieszkańców wzrosła 10 razy.</p>
+            <p>{{ localized_text_content }}</p>
         </div>
     </main>
 </template>
