@@ -20,9 +20,9 @@
 <body>
 
 <div id="app">
-    <h1 class="scren-reader-text" @click.prevent="nextTip">{{ $t('app_title') }}</h1>
+    <h1 class="screen-reader-text">{{ $t('app_title') }}</h1>
     <lang-switcher></lang-switcher>
-    <router-view :tip="tip"></router-view>
+    <router-view :tip="tip" v-on:next-tip="nextTip"></router-view>
     <main-footer></main-footer>
 </div>
 
@@ -49,6 +49,7 @@
         <div id="tip">
             <p>{{ localized_text_content }}</p>
         </div>
+        <a id="next-tip-button" @click.prevent="$emit('next-tip')">{{ $t('main.randomize_next') }}</a>
     </main>
 </template>
 

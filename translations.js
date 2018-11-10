@@ -4,6 +4,9 @@ const messages = {
         lang_switcher: {
             change_language: 'Change language'
         },
+        main: {
+            randomize_next: 'Next tip'
+        },
         goals: {
             1: 'No poverty.',
             2: 'Zero hunger.',
@@ -33,6 +36,9 @@ const messages = {
         app_title: 'Zakładka Zrównoważonych Danych',
         lang_switcher: {
             change_language: 'Zmień język'
+        },
+        main: {
+            randomize_next: 'Losuj nową'
         },
         goals: {
             1: 'Koniec z ubóstwem',
