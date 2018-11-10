@@ -21,6 +21,7 @@ function getData(indicator, idx, areaCode) {
             localStorage.setItem(indicator, JSON.stringify(response));
         });
     }
+    return new Promise(function(){});
 }
 
 function createTipOfTheDay(indicator, idx) {
@@ -95,8 +96,7 @@ chart_type = [ChartType.PIE_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, Cha
 times = [true, true, false, true, false];
 query = ['&pageSize=19', '&pageSize=13', '', '', '']
 
-indicators.forEach(function (indicator, idx) { getData(indicator, idx, PolskaJestNajwazniejsza); });
-indicators.forEach(function (indicator, idx) { createTipOfTheDay(indicator, idx); });
+indicators.forEach(function (indicator, idx) { getData(indicator, idx, PolskaJestNajwazniejsza).then(function () {createTipOfTheDay(indicator, idx);}) });
 
 let it = 0;
 let samples = [];
