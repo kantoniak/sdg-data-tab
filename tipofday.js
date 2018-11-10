@@ -6,8 +6,8 @@ const ChartType = Object.freeze({
 class Tip {
     constructor(goal_id, text_content, text_content_en, chart_type, dataset, year_dataset, dataset_eu, year_dataset_eu) {
         this.goal_id = goal_id;
-        this.text_content = text_content;
-        this.text_content_en = text_content_en;
+        this.text_content = text_content + " w latach " + year_dataset[0] + "-" + year_dataset[year_dataset.length - 1];
+        this.text_content_en = text_content_en + " " + year_dataset[0] + "-" + year_dataset[year_dataset.length - 1];;
         this.chart_type = chart_type; // From ChartType
         this.dataset = dataset;
         this.year_dataset = year_dataset;
@@ -141,18 +141,18 @@ EU = ['40', '56', '100', '191', '196', '203', '208', '233', '246', '250', '300',
 series = ['SG_GEN_PARLN', 'FB_ATM_TOTL', 'SP_DYN_ADKL', 'IT_USE_ii99', 'SH_ALC_CONSPT'];
 indicators = ['5.5.1', '8.10.1', '3.7.2', '17.8.1', '3.5.2'];
 description_pl = [
-    'Liczba kobiet w sejmie zwiększyła się ponad 2 razy w latach 2000-2018',
-    'Liczba bankomatów zwiększyła się prawie 3 razy w latach 2004-2016',
-    'Liczba nastoletnich ciąż zmniejszyła się o ok 4% w latach 2000-2015',
-    'Liczba osób podłączonych do internetu zwiększyła się ponad 10 razy w latach 2000-2016',
-    'Spożycie alkoholu na osobę wzrosło o ponad 2 litry w latach 2000-2016',
+    'Liczba kobiet w sejmie zwiększyła się ponad 2 razy',
+    'Liczba bankomatów zwiększyła się prawie 3 razy',
+    'Liczba nastoletnich ciąż zmniejszyła się o ok 4%',
+    'Liczba osób podłączonych do internetu zwiększyła się ponad 10 razy',
+    'Spożycie alkoholu na osobę wzrosło o ponad 2 litry',
 ];
 description_en = [
-    'Number of women in parliament has increased over 2 times 2000-2018',
-    'Number of ATMs has increased almost 3 times 2004-2016',
-    'Number of adolescent pregnancy has descreased about 4% 2000-2015',
-    'Number of people online has increased over 10 times 2000-2016',
-    'Alcohol consumption per capita has increased over 2 liters 2000-2016',
+    'Number of women in parliament has increased over 2 times',
+    'Number of ATMs has increased almost 3 times',
+    'Number of adolescent pregnancy has descreased about 4%',
+    'Number of people online has increased over 10 times',
+    'Alcohol consumption per capita has increased over 2 liters',
 ];
 chart_type = [ChartType.PIE_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART];
 
