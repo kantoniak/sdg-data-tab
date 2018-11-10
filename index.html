@@ -15,6 +15,7 @@
   <script defer src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
   <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="translations.js"></script>
+  <script defer src="colors.js"></script>
   <script defer src="lang-switcher.js"></script>
   <script defer src="vue-chartist.js"></script>
   <script defer src="page-home.js"></script>
@@ -25,10 +26,10 @@
 </head>
 <body>
 
-<div id="app">
+<div id="app" :style="style">
     <header>
         <h1 class="screen-reader-text">{{ $t('app_title') }}</h1>
-        <img id="logo" :src="logo_src" height="40px" alt="{{ $t('app_title') }}" />
+        <img id="logo" :src="logo_src" height="40px" :alt="$t('app_title')" />
         <lang-switcher></lang-switcher>
     </header>
     <router-view :tip="tip" v-on:next-tip="nextTip"></router-view>

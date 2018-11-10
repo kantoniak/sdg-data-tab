@@ -25,6 +25,12 @@ const vm = new Vue({
     i18n,
     data,
     computed: {
+        color: function() {
+            return goal_colors[this.tip.goal_id];
+        },
+        style: function() {
+            return '--question-color: #' + this.color;
+        },
         logo_src: function () {
             return 'logo_' + i18n.locale + '.svg';
         }
