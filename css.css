@@ -70,7 +70,7 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
     #change-language ul { float: right; }
     #change-language a { color: #EFEFEF; }
 
-    #search-bar input { font-size: 1.4em; width: 100%; border-radius: 0; }
+    #search-bar input { font-size: 1.4em; width: 100%; border-radius: 0; box-sizing: border-box; }
 
     #title-holder h2 { font-size: 1.6em; padding: 0.6em 1em; }
     #tip p { padding: 1em 1em; font-size: 2em; }
