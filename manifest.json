@@ -1,0 +1,10 @@
+{
+    "name": "SDG Awesome Extension",
+    "version": "1.0",
+    "description": "Awesome Extension!",
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/npm/vue/dist/vue.js https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js https://unpkg.com/vue-i18n/dist/vue-i18n.js https://unpkg.com/axios/dist/axios.min.js 'unsafe-eval'; object-src 'self'",
+    "chrome_url_overrides" : {
+        "newtab": "index.html"
+    }
+}
