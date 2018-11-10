@@ -2,7 +2,8 @@ const messages = {
     en: {
         app_title: 'SDG Data Tab',
         lang_switcher: {
-            change_language: 'Change language'
+            change_language: 'Change language',
+            change_language_to: 'Change language to'
         },
         main: {
             randomize_next: 'Shuffle'
@@ -43,7 +44,8 @@ const messages = {
     pl: {
         app_title: 'Zakładka Zrównoważonych Danych',
         lang_switcher: {
-            change_language: 'Zmień język'
+            change_language: 'Zmień język',
+            change_language_to: 'Zmień język na '
         },
         main: {
             randomize_next: 'Losuj'

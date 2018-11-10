@@ -36,6 +36,10 @@ h2 { font-size: 2em; }
 
 h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 
+input[type="text"]::-webkit-input-placeholder {
+    color: #D1D3D7 !important;
+}
+
 /* Structure */
 #logo { height: 3em; }
 
@@ -59,7 +63,7 @@ h1, h2, h3, p, a { color: #252B36; text-decoration: none; }
 #app > footer li, #app > footer a { font-weight: 400; color: #EFEFEF; }
 
 #app footer #sharing { display: flex; align-items: center; }
-#app footer #sharing a { display: inline-block; background: ; height: 1.8em; width: 1.8em; overflow: hidden; margin-right: 1em; text-indent: -1000em; }
+#app footer #sharing a { display: inline-block; height: 1.6em; width: 1.6em; overflow: hidden; margin-right: 1em; text-indent: -1000em; }
 #chrome-extension { background: url(img/homepage.svg) no-repeat; background-size: contain; }
 #facebook-share { background: url(img/facebook.svg) no-repeat; background-size: contain; }
 #twitter-share { background: url(img/twitter.svg) no-repeat; background-size: contain; }

@@ -32,7 +32,7 @@
 <div id="app" :style="style">
     <header>
         <h1 class="screen-reader-text">{{ $t('app_title') }}</h1>
-        <img id="logo" :src="logo_src" height="40px" :alt="$t('app_title')" />
+        <a href="https://un.org.pl/" :title="$t('main_footer.sdg')"><img id="logo" :src="logo_src" height="40px" :alt="$t('app_title')" /></a>
         <lang-switcher></lang-switcher>
     </header>
     <router-view :tip="tip" v-on:next-tip="nextTip"></router-view>
@@ -40,7 +40,7 @@
 </div>
 
 <template id="lang-link">
-    <a href="#" @click="setLocale(locale)">{{ locale }}</a>
+    <a href="#" @click="setLocale(locale)" :title="$t('lang_switcher.change_language_to') + locale.toUpperCase()">{{ locale }}</a>
 </template>
 
 <template id="lang-switcher">
@@ -77,7 +77,7 @@
                 <li>{{ $t('chart.eu') }}</li>
             </ul>
         </div>
-        <a id="next-tip-button" class="input-style" @click.prevent="$emit('next-tip')">{{ $t('main.randomize_next') }}</a>
+        <a id="next-tip-button" class="input-style" @click.prevent="$emit('next-tip')" :title="$t('main.randomize_next')">{{ $t('main.randomize_next') }}</a>
         <vue-chartist :data="data" :options="options" type="Line"></vue-chartist>
     </main>
 </template>
