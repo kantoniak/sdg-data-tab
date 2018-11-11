@@ -148,11 +148,11 @@ description_pl = [
     'Spożycie alkoholu na osobę w Polsce wzrosło o ponad 2 litry',
 ];
 description_en = [
-    'Number of women in parliament in Poland has increased over 2 times',
-    'Number of ATMs in Poland per 100,000 adults has increased almost 3 times',
-    'Number of adolescent pregnancy in Poland has descreased about 4%',
-    'Number of people online in Poland has increased over 10 times',
-    'Alcohol consumption per capita in Poland has increased over 2 liters',
+    'Number of women in parliament in Poland increased over 2 times',
+    'Number of ATMs in Poland per 100,000 adults increased almost 3 times',
+    'Number of adolescent pregnancies in Poland decreased about 4%',
+    'Number of people online in Poland increased over 10 times',
+    'Alcohol consumption per capita in Poland increased over 2 liters',
 ];
 chart_type = [ChartType.PIE_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART, ChartType.BAR_CHART];
 
